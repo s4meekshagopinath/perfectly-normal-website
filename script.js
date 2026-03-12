@@ -18,23 +18,33 @@ const lines = [
 "Result: suspicious.",
 "There is literally nothing on this page.",
 "And yet you are still here.",
-"Fine. Try pressing Stay."
+"Fine. Try pressing the secret feature button."
 ];
-
-let i = 0;
 
 startBtn.onclick = () => {
 
 startTime = Date.now();
 
-if(i < lines.length){
+let i = 0;
+
 story.innerText = lines[i];
 i++;
+
+const interval = setInterval(() => {
+
+if(i < lines.length){
+
+story.innerText = lines[i];
+i++;
+
+}else{
+
+clearInterval(interval);
+chaosMode = true;
+
 }
 
-if(i === lines.length){
-chaosMode = true;
-}
+},3000);
 
 };
 
@@ -71,20 +81,19 @@ stayBtn.style.top = Math.random()*400 + "px";
 });
 
 function leave(){
+
 story.innerText = "Good decision. Goodbye.";
+
 }
 
 function stay(){
 
 const seconds = Math.floor((Date.now()-startTime)/1000);
 
-story.innerText = "I knew it. You're one of those people.";
-
-setTimeout(()=>{
 story.innerText = "Revealing secret feature...";
-},800);
 
 setTimeout(()=>{
+
 story.innerText =
 "There is no feature.\n\n"+
 "This website exists only to waste your time.\n\n"+
@@ -92,6 +101,7 @@ story.innerText =
 "System Report:\n"+
 "User Status: Procrastinating\n"+
 "Productivity: Critically Low";
-},2000);
+
+},1500);
 
 }
