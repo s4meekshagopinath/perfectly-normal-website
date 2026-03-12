@@ -44,7 +44,7 @@ chaosMode = true;
 
 }
 
-},3000);
+},2000);
 
 };
 
@@ -66,7 +66,7 @@ mouse.innerText = mouseLines[Math.floor(Math.random()*mouseLines.length)];
 
 setTimeout(()=>{
 mouseCooldown=false;
-},3000);
+},2000);
 
 });
 
@@ -102,6 +102,6 @@ story.innerText =
 "User Status: Procrastinating\n"+
 "Productivity: Critically Low";
 
-},1500);
+},1200);
 
 }
