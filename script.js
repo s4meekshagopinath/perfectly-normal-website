@@ -44,7 +44,7 @@ chaosMode = true;
 
 }
 
-},2000);
+},1000);
 
 };
 
@@ -66,7 +66,15 @@ mouse.innerText = mouseLines[Math.floor(Math.random()*mouseLines.length)];
 
 setTimeout(()=>{
 mouseCooldown=false;
-},2000);
+},1000);
+
+});
+
+document.addEventListener("visibilitychange", () => {
+
+if(document.hidden) return;
+
+story.innerText = "Nice try. I saw you open another tab.";
 
 });
 
@@ -81,9 +89,7 @@ stayBtn.style.top = Math.random()*400 + "px";
 });
 
 function leave(){
-
 story.innerText = "Good decision. Goodbye.";
-
 }
 
 function stay(){
@@ -95,13 +101,12 @@ story.innerText = "Revealing secret feature...";
 setTimeout(()=>{
 
 story.innerText =
-"There is no feature.\n\n"+
 "This website exists only to waste your time.\n\n"+
 "Time wasted: "+seconds+" seconds.\n\n"+
 "System Report:\n"+
 "User Status: Procrastinating\n"+
 "Productivity: Critically Low";
 
-},1200);
+},2000);
 
 }
