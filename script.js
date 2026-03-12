@@ -7,7 +7,8 @@ let startTime = Date.now();
 let mouseCooldown = false;
 let chaosMode = false;
 
-/* Mouse commentary */
+
+/* mouse commentary */
 
 document.addEventListener("mousemove", () => {
 
@@ -16,20 +17,31 @@ if(mouseCooldown) return;
 mouseCooldown = true;
 
 const lines = [
+
 "I saw that mouse movement.",
+
 "Stop moving your mouse like that.",
+
 "Interesting cursor behavior.",
+
 "You seem restless.",
+
 "You're definitely procrastinating."
+
 ];
 
 mouse.innerText = lines[Math.floor(Math.random()*lines.length)];
 
-setTimeout(()=>{mouseCooldown=false},3000);
+setTimeout(()=>{
+
+mouseCooldown=false;
+
+},3000);
 
 });
 
-/* Story progression */
+
+/* story progression */
 
 startBtn.onclick = () => {
 
@@ -81,7 +93,8 @@ chaosMode = true;
 
 };
 
-/* Runaway Stay button */
+
+/* runaway button */
 
 stayBtn.addEventListener("mouseover", () => {
 
@@ -90,11 +103,13 @@ if(!chaosMode) return;
 stayBtn.style.position = "absolute";
 
 stayBtn.style.left = Math.random()*600 + "px";
+
 stayBtn.style.top = Math.random()*400 + "px";
 
 });
 
-/* Leave */
+
+/* leave */
 
 function leave(){
 
@@ -102,7 +117,8 @@ story.innerText = "Good decision. Goodbye.";
 
 }
 
-/* Stay */
+
+/* stay */
 
 function stay(){
 
