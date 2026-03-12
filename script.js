@@ -44,7 +44,7 @@ chaosMode = true;
 
 }
 
-},1000);
+},2000);
 
 };
 
@@ -66,7 +66,7 @@ mouse.innerText = mouseLines[Math.floor(Math.random()*mouseLines.length)];
 
 setTimeout(()=>{
 mouseCooldown=false;
-},1000);
+},2000);
 
 });
 
@@ -81,7 +81,9 @@ stayBtn.style.top = Math.random()*400 + "px";
 });
 
 function leave(){
+
 story.innerText = "Good decision. Goodbye.";
+
 }
 
 function stay(){
@@ -100,6 +102,6 @@ story.innerText =
 "User Status: Procrastinating\n"+
 "Productivity: Critically Low";
 
-},800);
+},1200);
 
 }
