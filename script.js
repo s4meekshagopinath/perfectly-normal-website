@@ -7,46 +7,6 @@ let startTime = Date.now();
 let mouseCooldown = false;
 let chaosMode = false;
 
-
-/* mouse commentary */
-
-document.addEventListener("mousemove", () => {
-
-if(mouseCooldown) return;
-
-mouseCooldown = true;
-
-const lines = [
-
-"I saw that mouse movement.",
-
-"Stop moving your mouse like that.",
-
-"Interesting cursor behavior.",
-
-"You seem restless.",
-
-"You're definitely procrastinating."
-
-];
-
-mouse.innerText = lines[Math.floor(Math.random()*lines.length)];
-
-setTimeout(()=>{
-
-mouseCooldown=false;
-
-},3000);
-
-});
-
-
-/* story progression */
-
-startBtn.onclick = () => {
-
-startTime = Date.now();
-
 const lines = [
 
 "Okay. Enjoy the website.",
@@ -75,26 +35,55 @@ const lines = [
 
 let i = 0;
 
-const timer = setInterval(()=>{
+startBtn.onclick = () => {
+
+startTime = Date.now();
+
+if(i < lines.length){
 
 story.innerText = lines[i];
 
 i++;
 
-if(i === lines.length){
+}
 
-clearInterval(timer);
+if(i === lines.length){
 
 chaosMode = true;
 
 }
 
-},3000);
-
 };
 
+document.addEventListener("mousemove", () => {
 
-/* runaway button */
+if(mouseCooldown) return;
+
+mouseCooldown = true;
+
+const mouseLines = [
+
+"I saw that mouse movement.",
+
+"Stop moving your mouse like that.",
+
+"Interesting cursor behavior.",
+
+"You seem restless.",
+
+"You're definitely procrastinating."
+
+];
+
+mouse.innerText = mouseLines[Math.floor(Math.random()*mouseLines.length)];
+
+setTimeout(()=>{
+
+mouseCooldown=false;
+
+},3000);
+
+});
 
 stayBtn.addEventListener("mouseover", () => {
 
@@ -108,17 +97,11 @@ stayBtn.style.top = Math.random()*400 + "px";
 
 });
 
-
-/* leave */
-
 function leave(){
 
 story.innerText = "Good decision. Goodbye.";
 
 }
-
-
-/* stay */
 
 function stay(){
 
@@ -130,7 +113,7 @@ setTimeout(()=>{
 
 story.innerText = "Revealing secret feature...";
 
-},3000);
+},2000);
 
 setTimeout(()=>{
 
@@ -142,6 +125,6 @@ story.innerText =
 "User Status: Procrastinating\n"+
 "Productivity: Critically Low";
 
-},6000);
+},4000);
 
 }
